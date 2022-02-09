@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Roving Care</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center" id="preloader">
+      <div class="spinner-grow text-primary" role="status">
+        <div class="sr-only">Loading...</div>
+      </div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- # Paste your Header Content from here -->
+        <!-- # Header Five Layout -->
+        <!-- # Copy the code from here ... -->
+        <!-- Header Content -->
+        <div class="header-content header-style-five position-relative d-flex align-items-center justify-content-between">
+			<div class="back-button"><a href="dependants.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+            </svg></a></div>
+          <!-- Logo Wrapper -->
+          <div class="logo-wrapper"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
+          <!-- Navbar Toggler -->
+          <div></div>
+        </div>
+        <!-- # Header Five Layout End -->
+      </div>
+    </div>
+    <!-- # Sidenav Left -->
+    <div class="page-content-wrapper py-3">
+      <div class="container">
+		<div class="alert custom-alert-2 alert-danger alert-dismissible fade show failed" role="alert" style="display:none">
+              <button class="btn btn-close position-relative p-1 ms-auto" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+		<div class="alert custom-alert-2 alert-success alert-dismissible fade show failed" role="alert" style="display:none">
+              <button class="btn btn-close position-relative p-1 ms-auto" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <!-- User Meta Data-->
+        <div class="card user-data-card">
+          <div class="card-body">
+            <form action="#" id="theform">
+              <div class="form-group mb-3">
+                <label class="form-label" for="firstname">First Name</label>
+                <input class="form-control" id="firstname" name="firstname" type="text">
+              </div>
+			  <div class="form-group mb-3">
+                <label class="form-label" for="lastname">Last Name</label>
+                <input class="form-control" id="lastname" name="lastname" type="text">
+              </div>
+			  <div class="form-group mb-3">
+                <label class="form-label" for="mobile">Mobile</label>
+                <input class="form-control" id="mobile" name="mobile" type="text">
+              </div>
+			  <div class="form-group mb-3">
+                <label class="form-label" for="mobile">International Mobile (Optional)</label>
+                <input class="form-control" id="mobileint" name="mobileint" type="text">
+              </div>
+			  <div class="form-group mb-3">
+                <label class="form-label" for="address">Address</label>
+                <input class="form-control" id="address" name="address" type="text">
+              </div>
+              <div class="form-group mb-3">
+                <label class="form-label" for="email">Email Address</label>
+                <input class="form-control" id="email" name="email" type="email">
+              </div>
+			  <div class="form-group mb-3">
+				<label class="form-label" for="dob">Date of Birth</label>
+				<input class="form-control" id="dob" name="dob" type="text" data-inputmask="'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy'">
+			  </div>
+			  <div class="form-group mb-3">
+				<label class="form-label" for="gender">Gender</label>
+				<select class="form-select" id="gender" name="gender" >
+					<option value="1">Male</option>
+					<option value="2">Female</option>
+                </select>
+			  </div>
+			  <div class="form-group mb-3">
+				<label class="form-label" for="areaid">Area</label>
+				<select class="form-select" id="areaid" name="areaid" >
+                </select>
+			  </div>
+			  <div class="form-group mb-3">
+				<label class="form-label" for="bloodgroup">Blood Group</label>
+				<select class="form-select" id="bloodgroup" name="bloodgroup" >
+					<option>O+</option>
+					<option>O-</option>
+					<option>A+</option>
+					<option>A-</option>
+					<option>B+</option>
+					<option>B-</option>
+					<option>AB+</option>
+					<option>AB-</option>
+                </select>
+			   </div>
+			   <div class="form-group mb-3">
+                <label class="form-label" for="weight">Weight (KG)</label>
+                <input class="form-control" id="weight" name="weight" type="text">
+               </div>
+			   <div class="form-group mb-3">
+                <label class="form-label" for="height">Height (CM)</label>
+                <input class="form-control" id="height" name="height" type="text">
+               </div>
+              <button class="btn btn-success w-100 updateBtn" type="submit">Add Dependant</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="index.html">
+                <svg class="bi bi-house" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"></path>
+                  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"></path>
+                </svg><span>Home</span></a></li>
+            <li><a href="requests.html">
+                <svg class="bi bi-collection" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M14.5 13.5h-13A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5zm-13 1A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"></path>
+                </svg><span>Requests</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/dark-mode-switch.js"></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/active.js"></script>
+	<!-- date mask -->
+	<script type="text/javascript" src="customjs/inputmask.js" charset="utf-8"></script>
+	<script src="customjs/jquery.inputmask.date.extensions.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+	<script src="customjs/custom.js"></script>
+  </body>
+</html>
+<script>
+$(document).ready(function () {
+	Inputmask().mask('#dob');
+});
+
+$(window).on('load', function() {
+	// begin with generic avatar
+	$(".photo").attr("src","https://rovingcare.com/uploads/avatar-male.png");
+	// get area list
+	$.ajax({
+		type: "GET",
+		url: "https://rovingcare.com/appajax/getareas.php",
+		success: function(data) {
+			var data = JSON.parse(data);
+			console.log(data);
+			areaid=localStorage.getItem("areaid");
+			$.each(data, function(i, field){
+				if (areaid==data[i].id) {
+					$('#areaid').append('<option value="'+data[i].id+'" selected>'+data[i].name+'</option>');
+					console.log(data[i].id);
+				} else {
+					$('#areaid').append('<option value="'+data[i].id+'">'+data[i].name+'</option>');
+				}
+			});
+		},
+	});
+	
+	// update info
+	$(".updateBtn").click(function(e) {
+		e.preventDefault();
+		$('.alert').hide();
+		var form = $("#theform");
+		
+		firstname=$("#firstname").val();
+		lastname=$("#lastname").val();
+		weight=$("#weight").val();
+		height=$("#height").val();
+		
+		if (firstname!="" && lastname!="" && weight!="" && height!="") {
+			$.ajax({
+				beforeSend: function() { $('.spinner-grow').show(); },
+				complete: function(){ $('.spinner-grow').hide(); },
+				type: "GET",
+				url: "https://rovingcare.com/appajax/adddep.php?savedtoken="+savedtoken,
+				data: form.serialize(), // serializes the form's elements.
+				success: function(data) {
+					console.log(data);
+					$('.alert-success').show();
+					$('.alert-success').html("User added successfully");
+					setTimeout(function() {
+						window.location.replace("dependants.html");
+					}, 1500);
+				},
+				error:function(XMLHttpRequest,textStatus,errorThrown){
+					var errormsg=XMLHttpRequest.responseText;
+					$('.alert-danger').show();
+					$('.alert-danger').html(errormsg);
+					window.scrollTo(0, 0); // scroll to top
+				}
+			});
+		} else {
+			$('.alert-danger').show();
+			$('.alert-danger').html("Please enter First Name, Last Name, Weight, and Height");
+		}
+    });
+});
+</script>

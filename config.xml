@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.rovingcare.iosapp" version="4.0.0" xmlns="http://www.w3.org/ns/widgets">
+    <name>Roving Care</name>
+    <description>
+        Roving Care Sudan Mobile App
+    </description>
+    <author email="info@webhosting.sd" href="http://cordova.io">
+        Omar Digna
+    </author>
+	<allow-intent href="*" />
+	<allow-navigation href="*" />
+    <content src="index.html" />
+    <access origin="*" />
+	<plugin name="cordova-plugin-whitelist" spec="1.3.4" />
+</widget>

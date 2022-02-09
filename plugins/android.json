@@ -1,0 +1,31 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.rovingcare.app"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.rovingcare.app"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.rovingcare.app"
+    },
+    "cordova-plugin-file-opener2": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.rovingcare.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.rovingcare.app"
+    },
+    "cordova-pdf-generator": {
+      "PACKAGE_NAME": "com.rovingcare.app"
+    }
+  },
+  "dependent_plugins": {}
+}

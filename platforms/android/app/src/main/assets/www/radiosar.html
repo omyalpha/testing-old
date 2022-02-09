@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" view-mode="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Roving Care">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Roving Care</title>
+    <!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet"> 
+	<!-- Favicon -->
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="stylear.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+	<style>
+	.floatright {
+		float: right;
+	}
+	.floatleft {
+		float: left;
+	}
+	.infinite {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.infitem {
+		width: 2em;
+	}
+	</style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center" id="preloader">
+      <div class="spinner-grow text-primary" role="status">
+        <div class="sr-only">Loading...</div>
+      </div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Header Area-->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content-->
+        <div class="header-content header-style-five position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button-->
+          <div class="back-button"><a href="indexar.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title-->
+          <div class="logo-wrapper"><a href="indexar.html"><img src="img/logo.png" alt=""></a></div>
+          <!-- Navbar Toggler-->
+		  <div class="setting-wrapper"><a id="settingTriggerBtn" href="profilear.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+				  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+				  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+				</svg><span></span></a></div>
+        </div>
+      </div>
+    </div>
+    <!-- # Sidenav Left -->
+    <div class="page-content-wrapper py-3">
+      <!-- Pagination-->
+      <div class="shop-pagination pb-3">
+        <div class="custom-container">
+          <div class="card">
+            <div class="card-body p-2">
+              <div class="d-flex align-items-center justify-content-between"><small class="ms-1">قائمة مراكز الأشعة (<span class="count">0</span>)</small>
+                <form action="#">
+                  <select class="pe-4 form-select form-select-sm" id="defaultSelectSm" name="defaultSelectSm" aria-label="Default select example">
+                    <option value="0">الكل</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Top Products-->
+      <div class="top-products-area product-list-wrap">
+        <div class="custom-container">
+          <div class="row g-3 results">
+          
+          </div>
+			<div class="col-12 infinite">
+				<div class="spinner-grow text-primary infitem" role="status">
+					<div class="sr-only">Loading...</div>
+				</div>
+			</div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="indexar.html">
+                <svg class="bi bi-house" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"></path>
+                  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"></path>
+                </svg><span>الرئيسية</span></a></li>
+            <li><a href="requestsar.html">
+                <svg class="bi bi-collection" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M14.5 13.5h-13A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5zm-13 1A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"></path>
+                </svg><span>طلباتي</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/dark-mode-switch.js"></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/active.js"></script>
+	<script src="js/jquery.inview.min.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+  </body>
+</html>
+<script>
+$(window).on('load', function() {
+	// get areas list
+	$.ajax({
+		type: "GET",
+		url: "https://rovingcare.com/appajax/getareas.php",
+		success: function(data) {
+			var data = JSON.parse(data);
+			$.each(data, function(i, field){
+				$('#defaultSelectSm').append('<option value="'+data[i].id+'">'+data[i].namear+'</option>');
+			});
+		},
+	});
+	
+	// general data		
+	window.savedtoken = localStorage.getItem("token");
+	window.pageno=0;
+	window.area=0;
+	window.htmlText="";
+
+	function loadmore() {
+		$.ajax({
+			beforeSend: function() { $('.spinner').show(); },
+			complete: function(){ $('.spinner').fadeOut(); },
+			type: "GET",
+			url: "https://rovingcare.com/appajax/getradios.php?pageno="+pageno+"&area="+area,
+			//data: dataString, // send token to grab data
+			success: function(data) {
+				var data = JSON.parse(data);
+				var size = Object.keys(data).length;
+				if (size==0) {
+					$('.infinite').hide();
+				} else {
+					$('.infinite').show();
+				}
+				$.each(data, function(i, field){
+					htmlText +='<div class="col-12"><div class="card single-product-card"><div class="card-body">';
+					htmlText +='<div class="card-content px-4 py-2">';
+					htmlText +='<a class="product-title d-block text-truncate mt-0 labname" href="radioar.html?id='+data[i].labid+'">'+data[i].labnamear+'<span class="m-1 badge bg-light text-dark pe-4 floatleft">'+data[i].labareaar+'</span></a>';
+					htmlText +='<p class="'+data[i].lababoutar+'"></p>';
+					htmlText +='<a class="btn btn-outline-info btn-sm" href="radioar.html?id='+data[i].labid+'">أطلب</a><button class="btn btn-primary btn-sm floatleft" type="button" data-bs-toggle="modal" data-bs-target="#list'+data[i].labid+'">الإختبارات</button>';
+					htmlText +='</div></div></div>';
+					htmlText +='<div class="modal fade" id="list'+data[i].labid+'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">';
+					htmlText +='<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">';
+					htmlText +='<div class="modal-header"><h6 class="modal-title" id="exampleModalLabel">'+data[i].labnamear+'</h6>';
+					htmlText +='<button class="btn btn-close p-1 ms-auto" type="button" data-bs-dismiss="modal" aria-label="Close"></button>';
+					htmlText +='</div><div class="modal-body">';
+					htmlText +='<table class="table mb-0"><thead><tr><th scope="col">#</th><th scope="col">الإختبار</th><th scope="col">التكلفة</th>';
+					htmlText +='</tr></thead><tbody id="testsbody'+data[i].labid+'"></tbody></table></div>';
+					htmlText +='<div class="modal-footer"><button class="btn btn-sm btn-secondary" type="button" data-bs-dismiss="modal">إغلاق</button>';
+					htmlText +='</div></div></div></div></div>';
+					count=data[i].count;
+					labid=data[i].labid;
+					
+					$('.results').append(htmlText);
+					
+					// add tests to table
+					//var data2 = JSON.parse(data[i].testsarray);
+					data2=data[i].testsarray;
+					$.each(data2, function(i, field){
+						$('#testsbody'+data2[i].testlabid).append('<tr><th>'+data2[i].testid+'</th><td>'+data2[i].testname+'</td><td>SDG '+data2[i].testcost+'</td></tr>');
+					});
+					htmlText='';
+					$('.count').html(count);
+				});
+			}
+		});
+	}
+	// infintite scroll
+	$('.infinite').on('inview', function(event, isInView) {
+	  if (isInView) {
+		pageno++;
+		loadmore();
+	  } 
+	});
+
+	// change of area
+	$('#defaultSelectSm').on('change', function() {
+		$('.count').html("0");
+		area=this.value;
+		pageno=1;
+		$('.results').html("");
+		loadmore();
+	});
+});
+</script>

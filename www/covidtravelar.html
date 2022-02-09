@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" view-mode="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Roving Care">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+	<title>Roving Care</title>
+    <!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet"> 
+	<!-- Favicon -->
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="stylear.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+	<style>
+	.infinite {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.infitem {
+		width: 2em;
+	}
+	</style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center" id="preloader">
+      <div class="spinner-grow text-primary" role="status">
+        <div class="sr-only">Loading...</div>
+      </div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Header Area-->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content-->
+        <div class="header-content header-style-five position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button-->
+          <div class="back-button"><a href="covidar.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title-->
+          <div class="logo-wrapper"><a href="indexar.html"><img src="img/logo.png" alt=""></a></div>
+          <!-- Navbar Toggler-->
+		  <div class="setting-wrapper"><a id="settingTriggerBtn" href="profilear.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+				  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+				  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+				</svg><span></span></a></div>
+        </div>
+      </div>
+    </div>
+    <!-- # Sidenav Left -->
+	<div class="page-content-wrapper py-3">
+		<div class="shop-pagination pb-3">
+			<div class="custom-container">
+				<div class="card">
+				  <div class="card-body p-2">
+					<h6 class="mb-0">معلومات</h6>
+					<p class="info"></p>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<div class="shop-pagination pb-3">
+			<div class="custom-container">
+			  <div class="card">
+				<div class="card-body p-2">
+				  <div class="d-flex align-items-center justify-content-between"><small class="ms-1">فحص كوفيد للسفر</small>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+      <div class="custom-container">
+        <div class="card">
+          <div class="card-body p-2">
+			<div class="alert custom-alert-2 alert-danger alert-dismissible fade show" role="alert" style="display:none">
+              <button class="btn btn-close position-relative p-1 ms-auto" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form action="post" id="theform" enctype="multipart/form-data" >
+              <div class="form-group">
+                <label class="form-label" for="defaultSelect">العميل</label>
+                <select class="form-select form-select-sm" id="clientid" name="clientid">
+                </select>
+              </div>
+			  <div class="form-group">
+                <label class="form-label" for="defaultSelect">المنطقة</label>
+                <select class="form-select form-select-sm" id="areaid" name="areaid">
+				<option value="0">إختيار</option>
+                </select>
+              </div>
+			  <div class="form-group">
+                <label class="form-label" for="exampleInputText">تاريخ السفر</label>
+                <input class="form-control" id="dot" type="text" name="dot" placeholder="Date of Travel" data-inputmask="'alias': 'datetime', 'inputFormat': 'dd/mm/yyyy'">
+              </div>
+			  <div class="form-group">
+                <label class="form-label" for="exampleInputText">تعليق</label>
+                <input class="form-control" id="comments" type="text" name="comments" placeholder="تعليق">
+              </div>
+			  <div class="form-group">
+                <label class="form-label" for="customFileSm">صورة جواز السفر</label>
+                <input class="form-control border-0 form-control-sm" name="uploaded_file" id="uploaded_file" type="file">
+              </div>
+			  <div class="form-group costcont" style="display:none">
+                <label class="form-label" for="exampleInputReadonly">التكلفة الكلية</label>
+                <input class="form-control" id="totalcost" type="text" readonly>
+              </div>
+			  <button class="btn btn-primary w-100 d-flex align-items-center justify-content-center send" type="button">إرسال الطلب
+                <svg class="bi bi-arrow-right-short" width="24" height="24" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="indexar.html">
+                <svg class="bi bi-house" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"></path>
+                  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"></path>
+                </svg><span>الرئيسية</span></a></li>
+            <li><a href="requestsar.html">
+                <svg class="bi bi-collection" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M14.5 13.5h-13A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5zm-13 1A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"></path>
+                </svg><span>طلباتي</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/dark-mode-switch.js"></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/active.js"></script>
+	<script src="js/jquery.inview.min.js"></script>
+	<!-- date mask -->
+	<script type="text/javascript" src="customjs/inputmask.js" charset="utf-8"></script>
+	<script src="customjs/jquery.inputmask.date.extensions.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+	<script src="customjs/custom.js"></script>
+  </body>
+</html>
+<script>
+$(document).ready(function () {
+	Inputmask().mask('#dot');
+});
+
+$(window).on('load', function() {
+	// general data		
+	window.savedtoken = localStorage.getItem("token");
+	
+	// get dependants list
+	$.ajax({
+		type: "GET",
+		url: "https://rovingcare.com/appajax/getdeps.php?savedtoken="+savedtoken,
+		success: function(data) {
+			var data = JSON.parse(data);
+			console.log(data);
+			$.each(data, function(i, field){
+				$('#clientid').append('<option value="'+data[i].id+'">'+data[i].firstname+' '+data[i].lastname+'</option>');
+			});
+		},
+	});
+	
+	// get areas list
+	$.ajax({
+		type: "GET",
+		url: "https://rovingcare.com/appajax/getareas.php",
+		success: function(data) {
+			var data = JSON.parse(data);
+			console.log(data);
+			$.each(data, function(i, field){
+				$('#areaid').append('<option value="'+data[i].id+'">'+data[i].namear+'</option>');
+			});
+		},
+	});
+	
+	// get info
+	$.ajax({
+		type: "GET",
+		url: "https://rovingcare.com/appajax/getserviceinfo.php?service=7",
+		success: function(data) {
+			var data = JSON.parse(data);
+			console.log(data);
+			$.each(data, function(i, field){
+				$('.info').html(data[0].infoar);
+			});
+		},
+	});
+	
+	$(".send").click(function(e) {
+		e.preventDefault();
+		$('.alert').hide();
+		var form = $("#theform");
+		var formData = new FormData();
+		formData.append('uploaded_file', $('input[type=file]')[0].files[0]); 
+		
+		var dot = $("#dot").val(); // check not empty
+		var passport = $("#uploaded_file").val(); // check not empty
+		var areaid = $("#areaid").val(); // check not empty
+		if (dot!="" && passport!="" && areaid!=0) {
+			$.ajax({
+				beforeSend: function() { $('.spinner-grow').show(); },
+				complete: function(){ $('.spinner-grow').hide(); },
+				type: "POST",
+				processData: false,
+				contentType: false,
+				url: "https://rovingcare.com/appajax/sendreq.php?savedtoken="+savedtoken+"&service=7&"+form.serialize(),
+				data: formData, // serializes the form's elements.
+				success: function(data) {
+					window.location.replace("confirm-orderar.html");
+				},
+				error:function(XMLHttpRequest,textStatus,errorThrown){
+					var errormsg=XMLHttpRequest.responseText;
+					$('.alert').show();
+					$('.alert').html(errormsg);
+				}
+			});
+		} else {
+			$('.alert').show();
+			$('.alert').html("الرجاء تحديد المنطقة، تاريخ السفر، و رفع نسخة من جواز السفر");
+		}
+	});
+	
+	// get costs per area
+	$('#areaid').on('change', function() {
+		areaid=this.value;
+		if (areaid==0) {
+			$('.costcont').hide();
+			$('#totalcost').val("");
+		} else {
+			$.ajax({
+				beforeSend: function() { $('.spinner-grow').show(); },
+				complete: function(){ $('.spinner-grow').hide(); },
+				type: "POST",
+				url: "https://rovingcare.com/appajax/getcost.php?areaid="+areaid+"&service=7",
+				success: function(data) {
+					var data = JSON.parse(data);
+					console.log(data);
+					$.each(data, function(i, field){
+						console.log(data[0].total);
+						$('.costcont').show();
+						$('#totalcost').val(data[0].total);
+					});
+				},
+				error:function(XMLHttpRequest,textStatus,errorThrown){
+					var errormsg=XMLHttpRequest.responseText;
+					$('.alert').show();
+					$('.alert').html(errormsg);
+				}
+			});
+		}
+	});
+});
+</script>

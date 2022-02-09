@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" view-mode="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Roving Care</title>
+    <!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet"> 
+	<!-- Favicon -->
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="stylear.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+	<style>
+	.infinite {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.infitem {
+		width: 2em;
+	}
+	</style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center" id="preloader">
+      <div class="spinner-grow text-primary" role="status">
+        <div class="sr-only">Loading...</div>
+      </div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Header Area-->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content-->
+        <div class="header-content header-style-five position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button-->
+          <div class="back-button"><a href="profilear.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title-->
+          <div class="logo-wrapper"><a href="indexar.html"><img src="img/logo.png" alt=""></a></div>
+          <!-- Navbar Toggler-->
+		  <div></div>
+        </div>
+      </div>
+    </div>
+    <!-- # Sidenav Left -->
+	<div class="page-content-wrapper py-3">
+		<div class="shop-pagination pb-3">
+			<div class="custom-container">
+			  <div class="card">
+				<div class="card-body p-2">
+				  <div class="d-flex align-items-center justify-content-between"><small class="ms-1">الملفات</small>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		</div>
+      <div class="custom-container">
+        <div class="card">
+          <div class="card-body p-2">
+			<div class="alert custom-alert-2 alert-danger alert-dismissible fade show" role="alert" style="display:none">
+              <button class="btn btn-close position-relative p-1 ms-auto" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form action="post" id="theform" enctype="multipart/form-data" >
+              <div class="form-group">
+                <label class="form-label" for="defaultSelect">العميل</label>
+                <select class="form-select form-select-sm" id="clientid" name="clientid">
+                </select>
+              </div>
+			  <div class="form-group mb-3">
+				<label class="form-label" for="bloodgroup">نوع الملف</label>
+				<select class="form-select" id="type" name="type" >
+					<option value="1">تأمين</option>
+					<option value="2">إثبات شخصية</option>
+					<option value="3">أخرى</option>
+                </select>
+			   </div>
+			  <div class="form-group">
+                <label class="form-label" for="exampleInputText">إسم الملف</label>
+                <input class="form-control" id="name" type="text" name="name" placeholder="إسم الملف">
+              </div>
+			  <div class="form-group">
+                <label class="form-label" for="customFileSm">الملف</label>
+                <input class="form-control border-0 form-control-sm" name="uploaded_file" id="uploaded_file" type="file">
+              </div>
+			  <button class="btn btn-primary w-100 d-flex align-items-center justify-content-center send" type="button"> رفع الملف 
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+				  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+				</svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+	  <hr>
+	  <div class="custom-container">
+          <div class="row g-3">
+			<div class="card">
+			  <div class="card-body p-2">
+				<div class="table-responsive">
+				<table class="table mb-0">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">العميل</th>
+							<th scope="col">النوع</th>
+							<th scope="col">الإسم</th>
+							<th scope="col">تحميل</th>
+							<th scope="col">مسح</th>
+						</tr>
+					</thead>
+					<tbody id="tablebody">
+					</tbody>
+				</table>
+				</div>
+			  </div>
+			</div>
+		  </div>
+	  </div>
+
+    </div>
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="indexar.html">
+                <svg class="bi bi-house" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"></path>
+                  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"></path>
+                </svg><span>الرئيسية</span></a></li>
+            <li><a href="requestsar.html">
+                <svg class="bi bi-collection" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M14.5 13.5h-13A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5zm-13 1A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"></path>
+                </svg><span>طلباتي</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+	<script src="cordova.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/dark-mode-switch.js"></script>
+    <script src="js/ion.rangeSlider.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/active.js"></script>
+	<script src="js/jquery.inview.min.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+	<script src="customjs/custom.js"></script>
+  </body>
+</html>
+<script>
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+	switch (device.platform) {
+		case "Android":
+			window.directory=cordova.file.externalRootDirectory;
+			break;
+		case "iOS":
+			window.directory = cordova.file.documentsDirectory;
+			break;
+	}
+
+	var permissions = cordova.plugins.permissions;
+	
+	var list = [
+	  permissions.WRITE_EXTERNAL_STORAGE,
+	  permissions.READ_EXTERNAL_STORAGE
+	];
+	 
+	permissions.hasPermission(list, success, error);
+	 
+	function error() {
+	  //alert('Accounts permission is not turned on');
+	}
+	 
+	function success( status ) {
+	  if( !status.hasPermission ) {
+		//alert ("requesting");
+		permissions.requestPermissions(
+		  list,
+		  function(status) {
+			if( !status.hasPermission ) error();
+		  },
+		  error);
+	  }
+	}
+}
+
+$(window).on('load', function() {
+	// general data		
+	window.savedtoken = localStorage.getItem("token");
+	
+	// get dependants list
+	$.ajax({
+		type: "GET",
+		url: "https://rovingcare.com/appajax/getdeps.php?savedtoken="+savedtoken,
+		success: function(data) {
+			var data = JSON.parse(data);
+			$.each(data, function(i, field){
+				$('#clientid').append('<option value="'+data[i].id+'">'+data[i].firstname+' '+data[i].lastname+'</option>');
+			});
+		},
+	});
+	
+	// get documents list
+	function refresh() {
+		$.ajax({
+			type: "GET",
+			url: "https://rovingcare.com/appajax/getdocs.php?savedtoken="+savedtoken,
+			success: function(data) {
+				var data = JSON.parse(data);
+				htmlText="";
+				$('#tablebody').html("");
+				$.each(data, function(i, field){
+					htmlText +='<tr><th>'+data[i].id+'</th><td>'+data[i].name+'</td><td>'+data[i].typear+'</td><td>'+data[i].docname+'</td><td><i class="bi bi-download download" id="download'+data[i].file+'"></i> </td><td><i class="bi bi-trash delete" id="'+data[i].id+'"></i></td></tr>';
+					$('#tablebody').append(htmlText);
+					htmlText="";
+				});
+			},
+		});
+	}
+	
+	refresh();
+	
+	$(".send").click(function(e) {
+		e.preventDefault();
+		$('.alert').hide();
+		var form = $("#theform");
+		var formData = new FormData();
+		formData.append('uploaded_file', $('input[type=file]')[0].files[0]); 
+		
+		var clientid = $("#clientid").val();
+		var type = $("#type").val();
+		var name = $("#name").val(); // check not empty
+		
+		if (name!="") {
+			htmlText="";
+			$.ajax({
+				beforeSend: function() { $('.spinner-grow').show(); },
+				complete: function(){ $('.spinner-grow').hide(); },
+				type: "POST",
+				processData: false,
+				contentType: false,
+				url: "https://rovingcare.com/appajax/uploaddoc.php?savedtoken="+savedtoken+"&clientid="+clientid+"&name="+name+"&type="+type,
+				data: formData,
+				success: function(data) {
+					refresh();
+				},
+				error:function(XMLHttpRequest,textStatus,errorThrown){
+					var errormsg=XMLHttpRequest.responseText;
+					$('.alert').show();
+					$('.alert').html(errormsg);
+				}
+			});
+		} else {
+			$('.alert').show();
+			$('.alert').html("الرجاء إدخال إسم الملف");
+		}
+	});
+	
+	// delete document
+	$( '#tablebody' ).on( "click", '.delete', function() { // for dom titles
+		$('.alert').hide();
+		value=$(this).attr('id');
+		var r = confirm("مسح الملف؟");
+		if (r == true) {
+		  $.ajax({
+				type: "GET",
+				url: "https://rovingcare.com/appajax/deldocument.php?savedtoken="+savedtoken+"&id="+value,
+				success: function(data) {
+					$.ajax({
+						type: "GET",
+						url: "https://rovingcare.com/appajax/getdocs.php?savedtoken="+savedtoken,
+						success: function(data) {
+							refresh();
+						},
+					});
+				},
+				error:function(XMLHttpRequest,textStatus,errorThrown){
+					var errormsg=XMLHttpRequest.responseText;
+					$('.alert').show();
+					$('.alert').html(errormsg);
+				}
+			});
+		}
+	});
+	
+	$( '#tablebody' ).on( "click", '.download', function() { // for dom titles
+
+		zaname=$(this).attr('id');
+		zaname = zaname.split("download");
+		filename=zaname[1];
+		
+		alert ("بدء تنزيل الملف");
+		
+		//$('#myModal').toggle();
+		
+		randomnum=Math.floor(Math.random() * 10000);
+		var fileTransfer = new FileTransfer();
+		var fileURL=directory+ 'download/' +randomnum+'_'+filename;
+		var uri = encodeURI("https://rovingcare.com/uploads/"+filename);
+		
+		// get file extension
+		var ext = filename.split('.').pop();
+		
+		if (ext=='pdf') {
+			mime='application/pdf';
+		} else if (ext=='zip') {
+			mime='application/zip';
+		} else if (ext=='rtf') {
+			mime='application/rtf';
+		} else if (ext=='doc') {
+			mime='application/msword';
+		} else if (ext=='jpg') {
+			mime='image/jpeg';
+		} else if (ext=='png') {
+			mime='image/png';
+		} else if (ext=='gif') {
+			mime='image/gif';
+		} else if (ext=='mp4') {
+			mime='video/mp4';
+		} else if (ext=='avi') {
+			mime='video/x-msvideo';
+		} else if (ext=='mov') {
+			mime='video/quicktime';
+		} else {
+			mime='null';
+		}
+		
+		fileTransfer.download(
+			uri,
+			fileURL,
+			function(entry) {
+				alert("File saved");
+				
+				cordova.plugins.fileOpener2.open(fileURL, mime);
+			},
+			function(error) {
+				//alert("download error target " + error.target);
+				//alert("download error target " + error.code);
+			},
+			false,
+			{
+				headers: {
+					"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+				}
+			}
+		);
+		
+	});
+});
+</script>
