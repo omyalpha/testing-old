@@ -9,6 +9,9 @@ workflows:
         # FCI_CERTIFICATE
         # FCI_CERTIFICATE_PASSWORD
         # FCI_PROVISIONING_PROFILE
+       vars:
+          BUNDLE_ID: "com.rovingcare.iosapp" # <-- Put your Bundle Id here.
+          APP_STORE_APP_ID: 1608815299 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
     scripts:
       - name: Install dependencies
         script: npm ci
