@@ -3,6 +3,12 @@ workflows:
     instance_type: mac_mini
     environment:
       xcode: 12.5
+      groups:
+        - certificate_credentials
+      # Add the above mentioned group environment variables in Codemagic UI (either in Application/Team variables): 
+        # FCI_CERTIFICATE
+        # FCI_CERTIFICATE_PASSWORD
+        # FCI_PROVISIONING_PROFILE
     scripts:
       - name: Install dependencies
         script: npm ci
@@ -12,6 +18,29 @@ workflows:
           
           cvm install 9.0.0
           cvm use 9.0.0
+      - name: Set up keychain to be used for code signing using Codemagic CLI 'keychain' command
+        script: keychain initialize
+      - name: Set up Provisioning profiles from environment variables
+        script: |
+          PROFILES_HOME="$HOME/Library/MobileDevice/Provisioning Profiles"
+          mkdir -p "$PROFILES_HOME"
+          PROFILE_PATH="$(mktemp "$PROFILES_HOME"/$(uuidgen).mobileprovision)"
+          echo ${FCI_PROVISIONING_PROFILE} | base64 --decode > "$PROFILE_PATH"
+          echo "Saved provisioning profile $PROFILE_PATH"      
+      - name: Set up signing certificate
+        script: |
+          echo $FCI_CERTIFICATE | base64 --decode > /tmp/certificate.p12
+          if [ -z ${FCI_CERTIFICATE_PASSWORD+x} ]; then
+            # when using a certificate that is not password-protected
+            keychain add-certificates --certificate /tmp/certificate.p12
+          else
+            # when using a password-protected certificate
+            keychain add-certificates --certificate /tmp/certificate.p12 --certificate-password $FCI_CERTIFICATE_PASSWORD
+          fi      
+      - name: Increment build number
+        script: agvtool new-version -all $BUILD_NUMBER
+      - name: Set up code signing settings on Xcode project
+        script: xcode-project use-profiles
       - name: Add iOS platform
         script: |
           set -e # exit on first failed command
@@ -23,6 +52,12 @@ workflows:
           set -e # exit on first failed command
 
           cordova build ios --no-interactive
+      - name: Build ipa for distribution
+        script: xcode-project build-ipa \
+                    --workspace "${XCODE_WORKSPACE?}" \
+                    --scheme "${XCODE_SCHEME?}"
+    artifacts:
+      - build/ios/ipa/*.ipa
 
 
 
